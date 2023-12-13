@@ -14,21 +14,21 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
           draggable
           onDragStart={(e) => onDragStart(e, "label")}
         >
-          🔗 Label
+          😿 Label
         </div>
         <div
           className="mb-2 p-2 bg-white cursor-grab rounded-sm"
           draggable
           onDragStart={(e) => onDragStart(e, "input")}
         >
-          🔗 Input
+          😿 Input
         </div>
         <div
           className="mb-2 p-2 bg-white cursor-grab rounded-sm"
           draggable
           onDragStart={(e) => onDragStart(e, "button")}
         >
-          🔗 Button
+          😿 Button
         </div>
       </div>
     </div>
