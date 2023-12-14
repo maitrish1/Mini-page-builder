@@ -17,12 +17,11 @@ function App() {
       top,
       left,
     };
-    console.log(newElement)
     setBoardElements((prevElements) => [...prevElements, newElement]);
   };
 
-  console.log(boardElements)
   const handleMove = (id: string, top: number, left: number) => {
+    console.log('inside handlemove app.tsx')
     setBoardElements((prevElements) =>
       prevElements.map((element) =>
         element.id === id ? { ...element, top, left } : element

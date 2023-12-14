@@ -11,23 +11,28 @@ const Board: React.FC<BoardProps> = ({ elements, onDrop, onMove }) => {
     const [draggedElement, setDraggedElement] = useState<string | null>(null);
   
     const handleDrop = (e: React.DragEvent) => {
-      e.preventDefault();
-        const elementType = e.dataTransfer.getData("text");
+        e.preventDefault();
         const { top, left } = e.currentTarget.getBoundingClientRect();
-        console.log('Dropped element:', elementType, 'Coordinates:', e.clientY - top, e.clientX - left);
-        onDrop(elementType, e.clientY - top, e.clientX - left);
-        setDraggedElement(null);
+        const elementType = e.dataTransfer.getData("text");
+        const id = e.dataTransfer.getData("id");
       
-    };
+        if (id) {
+          onMove(id, e.clientY - top, e.clientX - left);
+        } else {
+          onDrop(elementType, e.clientY - top, e.clientX - left);
+        }
+        setDraggedElement(null);
+      };
   
-    const handleDragStart = (e: React.DragEvent, id: string) => {
-      console.log('handleDragStart called');
-      setDraggedElement(id);
-      e.dataTransfer.setData("text", id);
-    };
+      const handleDragStart = (e: React.DragEvent, id: string) => {
+        setDraggedElement(id);
+        e.dataTransfer.setData("text", "existingElement");
+        e.dataTransfer.setData("id", id);
+      };
   
     const handleMouseMove = (e: React.MouseEvent) => {
       if (draggedElement) {
+        console.log('inside if draggeedlement')
         const { top, left } = e.currentTarget.getBoundingClientRect();
         console.log('Moving element:', draggedElement, 'Coordinates:', e.clientY - top, e.clientX - left);
         onMove(draggedElement, e.clientY - top, e.clientX - left);
