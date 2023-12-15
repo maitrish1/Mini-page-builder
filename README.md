@@ -1,39 +1,72 @@
-# React + TypeScript + Vite
+I don't know why, but it is taking CTRL+Enter to open the modal and edit, instead of Enter only. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo - 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+https://github.com/maitrish1/Mini-page-builder/assets/64683146/850ae6af-994c-4899-9aec-20066f0444ae
 
 
+# React Board Editor
 
-1. I created a layout with the board and the sidebar.
-2. Added ondragstart and ondrop events in Sidebar and Board respectively such that the dropped elements stuck to the left top corner of the board when dropped.
-3. I made Board.tsx 's parent div relative, and the element's absolute so that it actually sticks to the place we drag it to with the handleDrop function.
-4. Did not understand e.dataTransfer.getData, e.currentTarget.getBoundingClientRect(). - Research.
-5. Edited handleDrop and handleDragStart in Board.tsx to differentiate between new elements created or existing elements getting dragged across the board. New isntances of the already present elements were getting created when elements in the Board were dragged.
-6. 
+## Overview
+
+This project is a React board editor that allows users to add, edit, move, and delete elements on a board.
+
+## Features
+
+- Drag and drop elements from the sidebar onto the board.
+- Edit the properties of each element using a modal.
+- Save changes automatically to local storage.
+
+## Getting Started
+
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/react-board-editor.git
+   cd react-board-editor
+
+Certainly! Here's a simplified version of your README with inline code:
+
+markdown
+Copy code
+# React Board Editor
+
+## Overview
+
+This project is a React board editor that allows users to add, edit, move, and delete elements on a board.
+
+## Features
+
+- Drag and drop elements from the sidebar onto the board.
+- Edit the properties of each element using a modal.
+- Save changes automatically to local storage.
+
+## Getting Started
+
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/react-board-editor.git
+   cd react-board-editor
+Install dependencies:
+
+bash
+Copy code
+npm install
+Start the development server:
+
+bash
+Copy code
+npm start
+Usage
+Drag elements from the sidebar onto the board.
+Click on an element to select it and see a red border.
+Press Enter on an element to open the edit modal.
+Make changes and click Save to update the element.
+Changes are automatically saved to local storage.
+Contributing
+Feel free to contribute by opening issues or creating pull requests.
