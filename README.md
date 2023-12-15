@@ -28,3 +28,12 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+
+1. I created a layout with the board and the sidebar.
+2. Added ondragstart and ondrop events in Sidebar and Board respectively such that the dropped elements stuck to the left top corner of the board when dropped.
+3. I made Board.tsx 's parent div relative, and the element's absolute so that it actually sticks to the place we drag it to with the handleDrop function.
+4. Did not understand e.dataTransfer.getData, e.currentTarget.getBoundingClientRect(). - Research.
+5. Edited handleDrop and handleDragStart in Board.tsx to differentiate between new elements created or existing elements getting dragged across the board. New isntances of the already present elements were getting created when elements in the Board were dragged.
+6. 
