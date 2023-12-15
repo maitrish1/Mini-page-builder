@@ -58,6 +58,7 @@ const Board: React.FC<BoardProps> = ({
     fontWeight: string;
   }>({ text: "", x: 0, y: 0, fontSize: 16, fontWeight: "normal" });
   const [editingElementId, setEditingElementId] = useState<string | null>(null);
+  const [selectedElementId, setSelectedElementId] = useState<string | null>(null);
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -138,10 +139,12 @@ const Board: React.FC<BoardProps> = ({
       fontSize: `${element.fontSize}px`,
       fontWeight: element.fontWeight,
       padding: "10px",
+      border: selectedElementId === element.id ? "2px solid red" : "none",
     };
     const handleKeyDown = (e: React.KeyboardEvent) => {
       if (e.key === "Enter") {
         // Open the modal for the selected element
+        setSelectedElementId(element.id);
         setEditingElementId(element.id);
         setModalOpen(true);
         setElementData({
@@ -157,7 +160,7 @@ const Board: React.FC<BoardProps> = ({
     switch (element.type) {
       case "input":
         return (
-          <input
+          <input 
             onKeyDown={handleKeyDown}
             placeholder="helo"
             value={element.text}
