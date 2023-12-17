@@ -27,10 +27,6 @@ Follow these steps to run the project locally:
    git clone https://github.com/your-username/react-board-editor.git
    cd react-board-editor
 
-Certainly! Here's a simplified version of your README with inline code:
-
-markdown
-Copy code
 # React Board Editor
 
 ## Overview
